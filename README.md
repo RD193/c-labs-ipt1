@@ -1,2 +1,2 @@
 # c++-labs-ipt1
-Mikhail POleshchuk Михаил Полещук 
+Mikhail Poleshchuk Михаил Полещук 
