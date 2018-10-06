@@ -27,7 +27,7 @@ int main() {
 
 }
 int *join(int *q, int *r) // Вне зависимости от динны и без всяких там динамических 
-{                         //массивов, жаль что не работает
+{                         //массивов
   const int size = sizeof(q);
   static int resoult[size];
   for(int i = 0; i < size; i = i + 2)
