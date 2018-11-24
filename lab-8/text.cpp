@@ -1,8 +1,8 @@
 #include "text.h"
-line* Inp()
+line* Inp(const char* inp)
 {
   line *current, *first;
-  ifstream cin("input.txt");
+  ifstream cin(inp);
   string inp_str;
   current = first = new line;
   getline(cin,inp_str);
