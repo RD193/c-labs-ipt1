@@ -7,7 +7,7 @@ struct line
   string str;
   line *next;
 };
-line* Inp();
+line* Inp(const char* inp);
 void past(line* ln);
 int Count(line* ln);
 void change_letter(line*& ln, int line_number, int letter_number, char c);
