@@ -6,4 +6,3 @@ ghrsefgs
 Jean-Luc Pikard & Number One & Data & Troi & Jordy & Beberly & Worf
 s
 1234567890==+-*/
-#
