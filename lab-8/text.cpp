@@ -37,7 +37,7 @@ void past(line* ln)
 int Count(line* ln)
 {
   cout << "numer of lines: ";
-  int answer = 0;
+  int answer = 1;
   while(ln->next != NULL)
   {
     ln = ln->next;
