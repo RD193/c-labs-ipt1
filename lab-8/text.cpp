@@ -65,16 +65,15 @@ void change_letter(line* ln)
   cin >> c;
   ln->str[letter_number - 1] = c;
 }
-void swap_lines(line* raw_ln)
+void swap_lines(line* ln)
 {
   int i_line_num, j_line_num;
-  cout <<"Write numer of fist and second string(first is 1)\n";
+  cout <<"Write numer of first and second string(first is 1)\n";
   cin >> i_line_num;
   cin >> j_line_num;
   string temp;
   line *i_line, *j_line;
   int i = 1, n = 0;
-  line* ln = raw_ln;
   if(i_line_num - 1 == 0)
     {
       i_line = ln;
@@ -110,15 +109,14 @@ void swap_lines(line* raw_ln)
   i_line->str = j_line->str;
   j_line->str = temp;
 }
-void change_line(line* raw_ln)
+void change_line(line* ln)
 {
   int i_line_num, j_line_num;
-  cout <<"Write numer of fist and second string(first is 1)\n";
+  cout <<"Write numer of first and second string(first is 1)\n";
   cin >> i_line_num;
   cin >> j_line_num;
   line *i_line, *j_line;
   int i = 1, n = 0;
-  line* ln = raw_ln;
   if(i_line_num - 1 == 0)
     {
       i_line = ln;
