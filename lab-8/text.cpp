@@ -2,44 +2,36 @@
 line* Inp(const char* inp)
 {
   line *current, *first;
-  ifstream cin(inp);
+  FILE * inpf = fopen("input.txt" , "r");
   string inp_str;
+  char str [256];
   current = first = new line;
-  getline(cin,inp_str);
-  if (inp_str != "#")
-  {
-      current->str = inp_str;
-  }
-  while (inp_str != "#")
-  {
-    current->next = new line;
-    current = current->next;    
+  while (fgets(str, 256, inpf) != NULL)
+  {    
+    inp_str = str;
     current->str = inp_str;
-    getline(cin,inp_str);
+    current->next = new line;
+    current = current->next;
   }
   current->next = NULL;
-  cin.close();
   return first;
 }
 void past(line* ln)
 {
   cout << "Actual text:" << endl;
-  cout << ln->str << endl;
+  cout << ln->str;
   while(ln->next != NULL)
   {
     ln = ln->next;
-    cout << ln->str << endl;
+    cout << ln->str;
   }
+  cout << endl;
   return;
 }
 int Count(line* ln)
 {
   cout << "numer of lines: ";
   int answer = 0;
-  if(ln->str == "")
-  {
-    return 0;
-  }
   while(ln->next != NULL)
   {
     ln = ln->next;
@@ -47,21 +39,33 @@ int Count(line* ln)
   }
   return answer;
 }
-void change_letter(line*& ln, int line_number, int letter_number, char c)
+void change_letter(line* ln)
 {
-  for(int i = 0; i < line_number; i++)
+  int line_number, letter_number;
+  char c;
+  cout <<"Write numer of string(first is 1) and numver of letter(first is 1)\n";
+  cin >> line_number;
+  cin >> letter_number;
+  cout <<"New letter:\n";
+  cin >> c;
+  for(int i = 0; i < line_number-1; i++)
   {
-    if(ln->next == NULL)
+    if(ln->next == NULL & (line_number - i>1))
     {
       cout << "No such line" << endl;
       break;
     }
+    cout <<"line:"<< ln->str << endl;
     ln = ln->next;
   }
   ln->str[letter_number - 1] = c;
 }
-void swap_lines(line*& raw_ln, int i_line_num, int j_line_num)
+void swap_lines(line* raw_ln)
 {
+  int i_line_num, j_line_num;
+  cout <<"Write numer of fist and second string(first is 1)\n";
+  cin >> i_line_num;
+  cin >> j_line_num;
   string temp;
   line *i_line, *j_line;
   int i = 1, n = 0;
@@ -101,8 +105,12 @@ void swap_lines(line*& raw_ln, int i_line_num, int j_line_num)
   i_line->str = j_line->str;
   j_line->str = temp;
 }
-void change_line(line*& raw_ln, int i_line_num, int j_line_num)
+void change_line(line* raw_ln)
 {
+  int i_line_num, j_line_num;
+  cout <<"Write numer of fist and second string(first is 1)\n";
+  cin >> i_line_num;
+  cin >> j_line_num;
   line *i_line, *j_line;
   int i = 1, n = 0;
   line* ln = raw_ln;
