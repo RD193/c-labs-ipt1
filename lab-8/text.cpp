@@ -19,6 +19,7 @@ line* Inp(const char* inp)
     }
     break;
   }
+  current->str += "\n";
   current->next = NULL;
   return first;
 }
