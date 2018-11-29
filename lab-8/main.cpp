@@ -6,7 +6,7 @@ int main() {
   cout << "text used for test";
   past(test_text);
   int pnt;
-  cout << "1 for chage letter\n2 for swap strings\n3 for change text of one string to text from other string\n4 to see number of strings\n5 to past text\n";
+  cout << "1 to chage letter\n2 to swap strings\n3 to change text of one string to text from other string\n4 to see number of strings\n5 to past text\n";
   while(true)
   {
     cin >> pnt;
