@@ -13,7 +13,7 @@ int main() {
     switch(pnt)
     {
       case 1:
-        change_letter(test_text_f);
+        change_letter(test_text);
         break;
       case 2:
           swap_lines(test_text);
