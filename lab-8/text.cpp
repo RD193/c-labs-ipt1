@@ -6,12 +6,18 @@ line* Inp(const char* inp)
   string inp_str;
   char str [256];
   current = first = new line;
-  while (fgets(str, 256, inpf) != NULL)
+  fgets(str, 256, inpf) != NULL;
+  while (true)
   {    
     inp_str = str;
     current->str = inp_str;
-    current->next = new line;
-    current = current->next;
+    if(fgets(str, 256, inpf) != NULL)
+    {
+          current->next = new line;
+          current = current->next;
+          continue;
+    }
+    break;
   }
   current->next = NULL;
   return first;
@@ -45,19 +51,18 @@ void change_letter(line* ln)
   char c;
   cout <<"Write numer of string(first is 1) and numver of letter(first is 1)\n";
   cin >> line_number;
-  cin >> letter_number;
-  cout <<"New letter:\n";
-  cin >> c;
   for(int i = 0; i < line_number-1; i++)
   {
     if(ln->next == NULL & (line_number - i>1))
     {
       cout << "No such line" << endl;
-      break;
+      return;
     }
-    cout <<"line:"<< ln->str << endl;
     ln = ln->next;
   }
+  cin >> letter_number;
+  cout <<"New letter:\n";
+  cin >> c;
   ln->str[letter_number - 1] = c;
 }
 void swap_lines(line* raw_ln)
@@ -98,8 +103,8 @@ void swap_lines(line* raw_ln)
   }
   if(n!=2)
   {
-  cout << "No such lines";
-  return;
+    cout << "No such lines";
+    return;
   }
   temp = i_line->str;
   i_line->str = j_line->str;
